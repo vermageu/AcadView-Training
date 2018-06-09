@@ -1,0 +1,55 @@
+#Q1. CHECK LEAP YEAR
+year=int(input("Enter an year:"))
+if(year%4==0 & year%100!=0 | year%400==0):
+    print("\nThe year is a leap year!")
+else:
+    print("\nThe year isn't a leap year!")
+    
+#Q2. CHECK DIMENSIONS ARE OF RECTAMGLE OR SQUARE
+length = int(input("Enter length: "))
+breadth = int(input("\nEnter breadth: "))
+if(length == breadth):
+   print("\nDIMENSIONS ARE OF SQUARE")
+else:
+   print("\nDIMENSIONS ARE OF RECTANGLE")
+
+#Q3. FIND OLDEST & YOUNGEST AMONG 3 PEOPLE
+num1 = int(input('Enter First number : '))
+num2 = int(input('Enter Second number : '))
+num3 = int(input('Enter Third number : '))
+if (num1 > num2) & (num1 > num3):
+        largest_num = num1
+elif (num2 > num1) & (num2 > num3):
+        largest_num = num2
+else:
+        largest_num = num3
+print("\nThe largest of the 3 numbers is : ", largest_num)
+
+if (num1 < num2) & (num1 < num3):
+        smallest_num = num1
+elif (num2 < num1) & (num2 < num3):
+        smallest_num = num2
+else:
+        smallest_num = num3
+print("The smallest of the 3 numbers is : ", smallest_num)
+
+#Q4. PRINT PRIZE IF ELIGIBLE
+point = int(input("Enter your points: "))
+print("\nYou have won: ")
+if (point <= 50):
+    print("No Prize")
+elif (point > 50 & point <= 150):
+    print("Wooden Dog")
+elif (point > 150 & point <= 180):
+    print("Book")
+elif (point > 180 & point <= 200):
+    print("Chocolates")
+else:
+    print("OOPS!! Enter a valid score")
+    
+#Q5. SHOPKEEPER DISCOUNT PROBLEM
+quantity = int(input("Enter quantity of the item: "))
+cost = quantity*100
+if(cost > 1000):
+   cost = cost*0.9
+print("\nTotal Cost: %d"%(cost))
