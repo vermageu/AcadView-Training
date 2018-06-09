@@ -1,0 +1,70 @@
+                                #TUPLES#
+#Q1. FIND LENGTH OF TUPLE CONTAINING ELEMENTS OF DIFFERENT DATATYPES
+t = (1,2,3,"Saurav",[1,2],True)
+print(len(t))
+
+#Q2. FIND LARGEST AND SMALLEST ELEMENTS IN A TUPLE
+x = (1,7, 2, 5 , 0, 9)
+print("Given Tuple: " )
+print (x)
+print("MAXIMUM ELEMENT: ")
+print(max(x))
+print("MINIMUM ELEMENT: ")
+print(min(x))
+
+#Q3. FIND PRODUCT OF ALL ELEMENTS IN TUPLE
+prod = 1
+tup = (1,2,3,6,7,8)
+for x in tup:
+    prod = prod*x
+print("Product: %d"%(prod))  
+
+                               #SETS#
+#Q1. CREATE TWO SETS USING USER DEFINED VALUES
+sample1 = set()
+sample2 = set()
+input1 = input("Enter values in tuple 1: ")
+input2 = input("\nEnter values in tuple 2: ")
+sample1.update(input1)
+sample2.update(input2)
+         
+         #I. DIFFERENCE BETWEEN SETS
+sample3 = sample2-sample1
+print("\n",sample3)
+         
+         #II. COMPARE TWO SETS
+setx = set(["Saurav","Praveen"])
+sety = set(["Arun", "Saurav", "Praveen"])
+issubset = setx <= sety
+print(issubset)
+issuperset = setx >= sety
+print(issuperset)
+         
+         #III. INTERSECTION OF TWO SETS
+sample4 = sample1 & sample2
+print(sample4)
+
+                              #DICTIONARIES#
+#Q1. CREATE DICTIONARY OF 10 STUDENT INPUTS
+record = int(input("Enter Number of Students :"))
+stud_data={}
+for i in range(record):
+    Name = input("\nEnter the student name :").split()
+    Marks = input("\nEnter the marks : ").split()
+    Nam_key =  Name[0]
+    Mark_value = Marks[0]
+    stud_data[Nam_key] = {Mark_value}
+print(stud_data)
+
+#Q2. SORT DICTIONARY ACCORDING TO MARKS
+sorted(stud_data, key = stud_data.get)
+print(stud_data)
+
+#Q3. COUNT FREQUENCY OF EACH WORD IN WORD: MISSISSIPPI
+import collections
+word = "MISSISSIPPI"
+word_list = list(word)
+print(word_list)
+counter = collections.Counter(word_list)
+word_dictionary = dict(counter)
+print(word_dictionary)
