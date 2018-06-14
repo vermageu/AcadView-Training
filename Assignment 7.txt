@@ -1,0 +1,46 @@
+#Q1. What is Time Tuple?
+"""
+As the name suggests, it is a tuple that is related with time and it's informations. 
+It contains several values, arranged the following way: 
+year, month 1-12, day 1-31, hour 0-23, minutes 0-59, seconds 0-61, day 0-6 (Mon-Sun), day 1-366, and DST -1,0,+1 (DST means "daylight savings time")
+Using a tuple is convenient, because you can access particular numbers by index, and because you can easily compare dates.
+The "gmtime" package in time "libarary"  has a format of tuple
+"""
+
+#Q2. Program to get formatted time
+import time
+current_time = time.gmtime()                           #Store the gmt time in current time
+print("Formatted time: ", time.asctime(current_time))  #Arrange the values of currrent time in format as: Day Month Date Time Year
+
+#Q3. Program to extract month from time
+month = time.strftime("%B", time.gmtime())             #Strf function can declare the date, day, month and year separately. Here we extract month
+print("Current month:", month)
+
+#Q4. Program to extract day from time
+day = time.strftime("%A", time.gmtime())               #Strf function: %a/%A for day, %B for Month, %y for year, %d for date
+print("Current day: ", day)
+
+#Q5. Program to extract date from time
+date = time.strftime("%d", time.gmtime())              #Strf function: %a/%A for day, %B for Month, %y for year, %d for date
+print("Current date: ", date)
+
+#Q6. Print time using localtime method
+print("Local time: ",time.localtime())                 #Call localtime() which is part of the time library. Displays today's time
+print("Local time: ",time.localtime(0))                #Displays the first epoch of UNIX based systems, i.e. January 1 1970 Thu
+
+#Q7. Find factorial using inbuilt math function
+import math                                            #Import math library
+num = int(input("Enter a number: "))
+print("\nFactorial of %d: "%(num),math.factorial(num)) #Call inbuilt function of math library, factorial(arg) that returns factorial of argument "arg"
+
+#Q8. Find GCD using inbuilt math function
+print(math.gcd(10,100))                                #gcd(a,b) math fucntion returns hcf of two numbers a & b
+print(math.gcd(0, 11))                                 #If one number is non-zero then it returns largest positive integer among a,b
+
+#Q9. OS operations
+import os                                              #Python is a very cool language. It allows one to control the OS opeartions through os library
+#I. Get current working directory
+os.getcwd()                                            #Returns current working directory
+#II. Get user environment 
+os.environ                                             #Returns ALL user environment variables such as 'HOME', 'PATH', etc. 
+os.environ['PATH']                                     #Returns specific environment variable as mentioned within []
