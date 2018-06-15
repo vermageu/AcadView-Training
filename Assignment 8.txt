@@ -1,0 +1,88 @@
+#Q1. Create a circle class and initialize it with radius. Make two methods getArea and getCircumference inside this class. 
+class Circle:
+    def __init__(self,r):                           #Initialising value of radius
+        self.radius = r
+        print("Radius: ", self.radius)                  
+    def getArea(self):                              #Function to calculate & print area of circle : PI*radius*radius
+        area = 3.14*self.radius*self.radius         
+        print("Area: ", area)
+    def getCircumference(self):                     #Function to calculate & print perimeter of circle: 2*PI*radius
+        per = 6.28*self.radius
+        print("Circumference: %.2f" % per)
+#Driving Code
+obj = Circle(10)             #Object creation of class Circle 
+obj.getArea()                #Call for member function getArea()
+obj.getCircumference()       #Call for member function gerCircumference()
+
+#Q2. Create a Student class and initialize it with name and roll number. Make method Display to print details
+class Student:
+    def __init__(self,name,roll):                  #Initialising values of name & roll number of student
+        self.n = name
+        self.r = roll
+    def Display(self):                             #Function to display Details of students
+        print("Name: ", self.n)
+        print("Roll Number: ", self.r)
+#Driving Code        
+S1 = Student("Saurav", 32)    #Object creation of class Student
+S1.Display()                  #Call for member function Display()
+S2 = Student("Praveen", 26)   #Object Creation of class Student
+S2.Display()                  #Call for member function Display()
+        
+#Q3. Create a Temperature class. Create two functions to convert celsius to fahrenheit & vice versa    
+class Temperature:
+    def __init__(self,temp):                      #Initialising value of temperature
+        self.t = temp
+    def convertFahrenheit(self):                  #Function to convert Celsius to Fahrenheit
+        fah = (9/5)*self.t + 32
+        print("Fahrenheit Equivalent: ", fah)
+    def convertCelsius(self):                     #Function to convert Fahrenheit to Celsius
+        cel = (self.t-32)*(5/9)
+        print("Celsius Equivalent: ", cel)
+t1 = Temperature(44)          #Object Creation of class Temperature
+t2 = Temperature(105.8)       #Object Creation of class Temperature
+t1.convertFahrenheit()        #Call for member function convertFahrenheit()
+t2.convertCelsius()           #Call for member fucntion converCelsius()
+
+#Q4. Create a class MovieDetails & make methods to Display & Update details of movies
+class MovieDetails: 
+    def __init__(self, mn, an, yr, r):            #Initialising values of Movie Name, Artist Name, Year of Release, Ratings
+        self.movie_name = mn
+        self.artist_name = an
+        self.release_year = yr
+        self.ratings = r        
+    def Display(self):                            #Function to display details of Movie
+        print("Movie: ",self.movie_name)
+        print("Artist Name: ",self.artist_name)
+        print("Release Year: ",self.release_year)
+        print("Ratings (Out of 10): ", self.ratings)
+    def Update(self, new_moviename, new_artistname, new_release, new_ratings):  #Function to update details of Movie as provided
+        print("Updating Movie Details.....")
+        self.movie_name = new_moviename
+        self.artist_name = new_artistname
+        self.release_year = new_release
+        self.ratings = new_ratings
+Movie1 = MovieDetails("Mission Impossible: Fallout","Tom Cruise",2018,9.1)    #Object creation of class MovieDetails
+Movie2 = MovieDetails("Race 3","Salman Khan",2018,7)                          #Object creation of class MovieDetails
+Movie1.Display()                                                              #Call for member function Display()
+Movie2.Display()                                                              #Call for member function Display()
+Movie2.Update("Race 3","Saurav Verma",2018,9.5)                               #Call for member function Update()
+Movie2.Display()                                                              #Call for member function Display()
+
+#Q5. Create a class Expenditure & make methods to handle expenditure & savings 
+class Expenditure:                                  
+    def __init__(self,expenditure, savings):     #Initialising values of expenditure & savings
+        self.e = expenditure
+        self.s = savings
+    def Display(self):                           #Function to Display Expenditure & Savings
+        print("Expenditure: ", self.e)           
+        print("Savings: ", self.s)
+    def Calculate_salary(self):                  #Function to Calculate salary
+        self.salary = self.s - self.e 
+    def Display_salary(self):
+        print("Salary: ", self.salary)           #Function to Display salary
+E = Expenditure(22450, 40000)                    #Object creation of class Expenditure 
+E.Display()                                      #Call for member function Display() 
+E.Calculate_salary()                             #Call for member function Calculate_salary()
+E.Display_salary()                               #Call for member function Display_salary()
+        
+        
