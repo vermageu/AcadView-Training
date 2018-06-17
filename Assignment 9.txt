@@ -1,0 +1,97 @@
+#Q1. Create a class Animal as a base class & implement inheritance by creating a child class Tiger
+class Animal():                              #Class Animal : Base Class
+    def __init__(self):                      #Constructor for Initialization of variables
+      self.legs = 4
+      self.wing = False
+      self.tail = True
+
+    def animal_attribute(self):              #Function to showcase attributes of animal as Initialized earlier
+      print("Entering parent class Animal")
+      print("Animal attributes:\nLegs: %d\nWings: %r\nTail: %r" % (self.legs,self.wing,self.tail))
+ 
+class Tiger(Animal):                         #Class Tiger: Derived Class
+    print("Flow in Inherited class Tiger")
+#Driving Code    
+T = Tiger()                                  #Object Creation of Class Tiger
+T.animal_attribute()                         #Function invocation of base class Animal
+
+"""
+Q2. What is the output of the code:
+class A:
+    def f(self):
+        return self.g()
+
+    def g(self):
+        return 'A'
+
+class B(A):
+    def g(self):
+        return 'B'
+
+a = A()
+b = B()
+print (a.f(), b.f())
+print (a.g(), b.g())
+
+Explaination:
+--------------------------------------------------------------------------------------------------------------
+Remember a is object of base class A & b is object of inherited class B
+So when we call functions f() or g() with respect to a, it executes content of class A &
+similarly when we call f() or g() wrt b, we access class B first. Now:
+a.f() = 'A' because we simply called function f() of A which returned via value of function g() of A
+b.f() = 'B' because b can inherit it's parent class' methods. As we reach f() of A, we come back to g() of b
+a.g() = 'A' because we called function g() of class A which returned the value 'A'
+b.g() = 'B' because we called function g() of class B which returned the value 'B'
+"""
+#Q3. Create a class Cop & a derived class Mission to find availability of a Cop
+class Cop:                                         #Class Cop: Base class
+  def __init__(self, naam, age, work_xp, desg):    #Constructor for Initialization of variables
+    self.name = naam
+    self.age = age
+    self.xp = work_xp
+    self.desg = desg
+  def Display(self):                               #Function to display details of Cop
+    print("Name: ", self.name)
+    print("Age:", self.age)
+    print("Work Experience: ", self.xp)
+    print("Designation: ",self.desg)
+  def Update(self, naam, age, work_xp, desg):      #Function to update details of Cop
+    self.name = naam
+    self.age = age
+    self.xp = work_xp
+    self.desg = desg
+  def Add(self):                                   #Function to add details of Cop
+    location = input("Enter Current location: ")
+    duration = int(input("Enter duration of posting(in months): "))
+    print("Current Location: ", location)
+    print("Duration spent(in months): ",duration)
+
+class Mission(Cop):                                #Class Mission: Derived Class 
+  def add_mission_details(self):                   #Function to make cop available & add details of Mission
+    NewLocation = input("Enter New Location: ")
+    timespan = int(input("Enter Timespan of new location: "))
+    print("Cop available for mission at %s for %d months" % (NewLocation, timespan))
+#Driving Code
+M = Mission("Ethan Hunt", 35, 12, "IMF Field Agent") #Object Creation of Derived Class Mission
+M.Display()                                          #Invocation of Display function from Base Class Cop
+M.Update("Ethan Hunt", 35, 14, "IMF Field Agent")    #Invocation of Update function from Base Class Cop
+M.Add()                                              #Invocation of Add function from Base Class Cop
+M.add_mission_details()                              ##Invocation of add_mission_details function from Derived Class Mission
+
+#Q4. Create class Shape, Rectangle & Square to implement inheritance
+class Shape():                                     #Class Shape: Base Class
+  def __init__(self, l, b):                        #Constructor for Initialization of variables
+    self.length = l
+    self.breadth = b
+  def Area(self):                                  #Function to calculate area of given dimensions
+    area = self.length * self.breadth 
+    print("Area: ", area)
+class Square(Shape):                               #Class Square: Derived Class
+  print("Square Class")
+class Rectangle(Shape):                            #Class Rectangle: Derived Class
+  print("Rectangle Class")
+#Driving Code
+S = Square(4,4)                                    #Object Creation of Derived Class Square
+R = Rectangle(10,20)                               #Object Creation of Derived Class Rectangle
+S.Area()                                           #Invocation of Area function from Base Class Shape 
+R.Area()                                           #Invocation of Area function from Base ClasS Shape
