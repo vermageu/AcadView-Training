@@ -1,0 +1,33 @@
+#Q1.Extract the user id, domain name and suffix from the following email addresses. 
+import re
+emails = """zuck26@facebook.com
+page33@google.com
+jeff42@amazon.com"""
+print(re.findall(r'(\w+)@([A-Z0-9]+)\.([A-Z]{2,4})', emails, flags=re.IGNORECASE))     #Extracting the details mentioned above with regular expressions
+                                                                                       #Here re.IGNORECASE makes the data non case-sensitive
+
+#Q2.Retrieve all the words starting with ‘b’ or ‘B’ from the following text:
+text = "Betty bought a bit of butter, But the butter was so bitter, So she bought some better butter, To make the bitter butter better." 
+print(re.findall(r'\bB\w+', text, flags=re.IGNORECASE))
+
+#Q3. Split the irregular sentence into words only sentence
+sentence = "A, very very; irregular_sentence"
+output = " ".join(re.split('[;,\s_]+', sentence))                                      #Removal of extra special characters from the irregular string
+print(output)
+
+
+#Q4. Clean up the following tweet so that it contains only the user’s message, i.e. remove all URLs, hashtags, mentions, punctuations, RTs and CCs."""
+import re
+tweet = '''Good advice! RT @TheNextWeb: What I would do differently if I was learning to code today http://t.co/lbwej0pxOd cc: @garybernhardt #rstats'''
+tweet = re.sub('(http\S+\s*)|(RT|cc)|(#\S+)|(@\S+)',' ',tweet)                         #Removal of Url, RTs/CCs,hashtags(#),tags(@)
+tweet = re.sub('[%s]' % re.escape("""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""), '', tweet)  #Removal of punctuations
+tweet = re.sub('\s+', ' ', tweet)                                                      #Removal of extra whitespaces
+print(tweet)
+
+"""-----------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUTS:
+[('zuck26', 'facebook', 'com'), ('page33', 'google', 'com'), ('jeff42', 'amazon', 'com')]
+['Betty', 'bought', 'bit', 'butter', 'But', 'butter', 'bitter', 'bought', 'better', 'butter', 'bitter', 'butter', 'better']
+A very very irregular sentence
+Good advice What I would do differently if I was learning to code today 
+"""
