@@ -26,5 +26,5 @@ df.iloc[:,2].median(),
 df.iloc[:,2].nunique(),
 df.iloc[:,2].max(),
 df.iloc[:,2].min()]
-print(finaldata)
+print(finaldata) 
 
