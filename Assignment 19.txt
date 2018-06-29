@@ -1,9 +1,9 @@
 import pandas as pd
-#Q1. Create a dataframe with your name, age, mail-id and phone number and add your friends’s information to the same. 
+#Q1. Create a dataframe with your name, age, mail-id and phone number and add your friendsâ€™s information to the same. 
 data = {'Name':['Saurav'],'Age':[21],'mail id':['srvvrm83@gmail.com'],'phone no':['945xxxxxxx']}
 df = pd.DataFrame(data)
 df.loc[1]=['Praveen',21,'batbeerman@gmail.com','9420xxxxxx']       #Add detail of friend 1
-df.loc[2]=['Arun',20,'arunbhabhoria@gmail.com','817xxxxxxx']      #Add detail of friend 2
+df.loc[2]=['Arun',20,'arunbhabhoria@gmail.com','817xxxxxxx']       #Add detail of friend 2
 print(df)
 print("\n")
 
